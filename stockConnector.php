@@ -17,7 +17,7 @@ class StockConnector implements InterfazStockConnector {
         curl_close($ch);
 
         if($codigo < 200 || codigo > 300) {
-            echo json_encode(["mensaje" => "Movimiento registrado correctamente con codigo HTTP " . $codigo]);M
+            echo json_encode(["mensaje" => "Movimiento registrado correctamente con codigo HTTP " . $codigo]);
         }
     }
 }

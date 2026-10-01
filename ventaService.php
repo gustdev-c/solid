@@ -7,7 +7,7 @@ class VentaService {
             return [
                 'codigo' => $producto['codigo'],
                 'cantidad' => $producto['cantidad']
-            ]
+            ];
         }, $venta->productos);
 
         $movimiento = new DTOMovimiento(
