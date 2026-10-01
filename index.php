@@ -8,8 +8,8 @@
     require_once 'ventaService.php';
 
     // Para probar sin requerir localhost, descomente una linea y comente la otra
-	$conector = new StockConnector();
-	// $conector = new StockConnectorFalso();
+	// $conector = new StockConnector();
+	$conector = new StockConnectorFalso();
 
     $servicio = new VentaService($conector);
     $controlador = new VentaController($servicio);

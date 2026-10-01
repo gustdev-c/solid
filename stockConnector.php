@@ -12,12 +12,18 @@ class StockConnector implements InterfazStockConnector {
 
         $respuesta = curl_exec($ch);
 
+        if($respuesta === false) {
+            curl_close($ch);
+            throw new Exception("Error al comunicarse con el servidor.");
+        }
+
         $codigo = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
 
-        if($codigo < 200 || codigo > 300) {
-            echo json_encode(["mensaje" => "Movimiento registrado correctamente con codigo HTTP " . $codigo]);
+        if($codigo < 200 || $codigo >= 300) {
+            // Esto tendria que ser un error, no un mensaje de exito
+            throw new Exception("Error al registrar el movimiento. Codigo HTTP " . $codigo);
         }
     }
 }
