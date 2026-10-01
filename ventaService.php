@@ -5,7 +5,7 @@ class VentaService {
     public function procesar(DTOVenta $venta) {
         $productos = array_map(function(array $producto) {
             return [
-                'codigo' => $producto['codigo'],
+                'codigoProducto' => $producto['codigo'],
                 'cantidad' => $producto['cantidad']
             ];
         }, $venta->productos);
