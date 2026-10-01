@@ -1,6 +1,6 @@
 <?php
 class DTOMovimiento {
-        public __construct(public string $tipoMovimiento, public string $fecha, public string $referencia, public array $productos) {}
+        public function __construct(public string $tipoMovimiento, public string $fecha, public string $referencia, public array $productos) {}
 
         public function convertirAArreglo() {
             return ['tipoMovimiento' => $this->tipoMovimiento,
